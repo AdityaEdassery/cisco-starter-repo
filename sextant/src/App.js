@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to React
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return(<div>
+    <Banner styleID = 'mainTitle' Title = 'Sextant' headID = 'hid' textID = 'tid'/>
+    <Card/>
     </div>
+
   );
 }
 
-export default App;
+class Banner extends React.Component{
+  render(){ 
+    return(
+      <div id = {this.props.styleID}><p id = {this.props.headID}>{this.props.Title}</p>
+      <p id = {this.props.textID}>A local day-to-day field technician assistant, from Cisco</p>
+      </div>
+    );
+  }
+}
+
+class Card extends React.Component{
+  render(){
+    return(
+      <div id = {this.props.cID}>
+          <h2>{this.props.Heading}</h2>
+      </div>
+    );
+  }
+}
+  
+  export default App;
